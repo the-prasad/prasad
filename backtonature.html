@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Back to Nature</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f7f1;
+      color: #2d2a25;
+    }
+
+    header {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2d2a25;
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #2d2a25;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    .hero {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMFWaC3shOGC_mCs0ecCYcSVYqpTHXS5B_0Q&s');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background-color: #4b8f29;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about img {
+      flex: 1;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    .about div {
+      flex: 2;
+    }
+
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .benefit-item {
+      flex: 1 1 150px;
+    }
+
+    .benefit-item img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* ============ Responsive Styles ============ */
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 65px;
+        right: 20px;
+        background-color: white;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .benefits {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Back to Nature Logo">
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="navbar">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#naturopathy">Naturopathy</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#services">Services</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Nature is the Best Healer</h1>
+    <p>Welcome to Back to Nature, where we promote healing through natural therapies and remedies.</p>
+    <a href="#services" class="btn">Learn More</a>
+  </section>
+
+  <section id="about" class="about">
+    <img src="https://img.freepik.com/free-vector/organic-flat-people-meditating-illustration_23-2148906556.jpg?semt=ais_hybrid&w=740" alt="Yoga">
+    <div>
+      <h2>About Us</h2>
+      <p>Back to Nature is dedicated to providing natural healing through therapies and remedies. We believe in the power of nature to restore balance and promote well-being.</p>
+    </div>
+  </section>
+
+  <section id="naturopathy">
+    <h2>What is Naturopathy?</h2>
+    <p>Naturopathy is a holistic approach to health that emphasizes the use of natural therapies and the body’s intrinsic ability to heal itself.</p>
+  </section>
+
+  <section id="benefits">
+    <h2>Benefits</h2>
+    <div class="benefits">
+      <div class="benefit-item">
+        <img src="icon-weight.png" alt="Weight Management">
+        <p>Weight Management</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-stress.png" alt="Stress Reduction">
+        <p>Stress Reduction</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-detox.png" alt="Detoxification">
+        <p>Detoxification</p>
+      </div>
+      <div class="benefit-item">
+        <img src="icon-support.png" alt="Chronic Support">
+        <p>Chronic Disease Support</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Back to Nature. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
